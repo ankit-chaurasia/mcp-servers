@@ -17,13 +17,15 @@ server.tool(
   "Search books using the Open Library API",
   {
     q: z.string().describe("The search query for books"),
+    limit: z.string().optional().describe("The maximum number of results to return"),
+    page: z.string().optional().describe("The page number of results to return"),
   },
   async (args) => {
     console.error("Search Books tool received args:", args);
-    const { q } = args;
+    const { q, limit, page } = args;
 
     const data = await fetch(
-      `http://openlibrary.org/search.json?q=${encodeURIComponent(q)}`
+      `http://openlibrary.org/search.json?q=${encodeURIComponent(q)}&limit=${limit}&page=${page}`
     );
     const json = await data.json();
     let books = [];
