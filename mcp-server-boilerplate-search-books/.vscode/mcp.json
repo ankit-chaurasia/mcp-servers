@@ -1,0 +1,11 @@
+{
+  "servers": {
+    "mcp-open-library": {
+      "type": "stdio",
+      "command": "node",
+      "args": [
+        "/Users/ankitchaurasia/learnings/github/mcp-servers/mcp-server-boilerplate-search-books/build/index.js"
+      ]
+    }
+  }
+}
